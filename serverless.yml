@@ -1,0 +1,5 @@
+component: express
+name: nexus-prisma-serverless-express
+
+inputs:
+  src: ./.nexus/build
