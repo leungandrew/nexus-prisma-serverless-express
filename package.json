@@ -10,7 +10,10 @@
     "format": "npx prettier --write './**/*.{ts,md}'",
     "dev": "nexus dev",
     "build": "nexus build",
-    "start": "node .nexus/build/api"
+    "deploy:export": "echo \"module.exports = nexus_1.server.express\" >> .nexus/build/index.js",
+    "deploy:rename": "mv .nexus/build/index.js .nexus/build/app.js",
+    "deploy": "yarn deploy:export && yarn deploy:rename && serverless deploy",
+    "start": "node .nexus/build"
   },
   "prettier": {
     "semi": false,
